@@ -1,0 +1,39 @@
+@mixin center-absolute {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// MEDIA QUERY MANAGER
+/*
+
+0 - 600px:          Phone
+600px - 900px:      Tablet portrait
+900px - 1200px:     Tablet landscape
+1200px - beyond:    Actual styles
+
+*/
+
+/*
+
+$breakpoint argument choices
+- phone
+- tablet-portrait
+- tablet-landscape
+
+1em = 16px
+
+*/
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em) { @content };        //600px
+    }
+    @if $breakpoint == tablet-portrait {
+        @media (max-width: 56.25em) { @content };       //900px
+    }
+    @if $breakpoint == tablet-landscape {
+        @media (max-width: 75em) { @content };          //1200px
+    }
+}

@@ -1,0 +1,90 @@
+html {
+    font-size: 62.5%;   // 1rem = 10px
+
+    @include respond(tablet-landscape) {
+        font-size: 56.25%;  // 1rem = 9px
+    }
+
+    @include respond(tablet-portrait) {
+        font-size: 50%;     // 1rem = 8px
+    }
+
+    @include respond(phone) {
+        font-size: 43.75%;  // 1 rem = 7px;
+    }
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.heading-primary {
+    @include center-absolute;
+    top: 45%;
+    text-align: center;
+
+    &__name {
+        color: $color-grey-light-text;
+        font-size: 8rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-weight: 300;
+        margin-bottom: 4rem;
+        animation-name: move-down-text;
+        animation-duration: 2s;
+        animation-timing-function: ease;
+
+        @include respond(tablet-portrait) {
+            font-size: 7rem;
+            letter-spacing: 2px;
+        }
+
+        @include respond(phone) {
+            font-size: 5rem;
+            letter-spacing: 0;
+        }
+    }
+    
+    &__text {
+        position: relative;
+        color: $color-grey-light-text;
+        font-size: 10rem;
+        font-weight: 400;
+        letter-spacing: 1.2rem;
+        text-transform: uppercase;
+        animation-name: appear-text;
+        animation-delay: 2s;
+        animation-duration: 2s;
+        animation-fill-mode: backwards;
+
+        @include respond(tablet-portrait) {
+            font-size: 8rem;
+            letter-spacing: 1rem;
+        }
+
+        @include respond(phone) {
+            font-size: 6rem;
+            letter-spacing: 0;
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            background-color: $color-grey-light-text;
+            width: 30%;
+            height: 3px;
+            left: 50%;
+            top: -1.5rem;
+            transform: translateX(-50%);
+
+            @include respond(tablet-portrait) {
+                height: 2px;
+            }
+
+            @include respond(phone) {
+                height: 1px;
+            }
+            
+        }
+    }
+}

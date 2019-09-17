@@ -1,0 +1,43 @@
+.navbar {
+
+    &__list {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        list-style: none;
+
+        animation-name: appear-text;
+        animation-delay: 2s;
+        animation-duration: 2s;
+        animation-fill-mode: backwards;
+    }
+    
+    &__link,
+    &__link:link,
+    &__link:visited {
+        display: inline-block;
+        color: $color-grey-light-text;
+        text-decoration: none;
+        margin: 5rem 0;
+        font-size: 1.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        position: relative;
+        transition: all .3s;
+
+        &::after {
+            content: "";
+            width: 0;
+            height: 1px;
+            display: block;
+            margin-top: .3rem;
+            background-color: $color-grey-light-text;
+            transition: all .3s;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+    }
+}

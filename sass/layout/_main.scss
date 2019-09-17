@@ -1,0 +1,172 @@
+.about {
+    background-color: $color-grey-light-background;
+
+    &__container {
+        display: flex;
+        overflow: hidden;
+        padding: 8rem 0;
+
+        @include respond(tablet-portrait) {
+            padding: 5rem 0;
+        }
+
+        @include respond(phone) {
+            flex-direction: column-reverse;
+            align-items: center;
+            padding: 4rem 0;
+        }
+    }
+
+    &__photo {
+        width: 50%;
+        background-image: url("../img/person.jpg");
+        background-repeat: no-repeat;
+        background-position-y: 80%;
+        background-position-x: center;
+        background-size: cover;
+        border-radius: 5px;
+
+        @include respond(phone) {
+            width: 100%;
+            height: 250px;
+            background-position-y: 70%;
+        }
+    }
+
+    &__text-box {
+        width: 50%;
+        height: 100%;
+        padding: 3rem;
+        position: relative;
+        text-align: center;
+        color: $color-grey-light-text-2;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        @include respond(phone) {
+            width: 100%;
+            padding: 0 0 3rem 0;
+        }
+    }
+
+    &__title {
+        font-size: 5rem;
+        margin-bottom: 3rem;
+    }
+
+    &__text {
+        font-size: 2rem;
+        line-height: 4rem;
+        position: relative;
+        padding-bottom: 4rem;
+
+        @include respond(tablet-portrait) {
+            line-height: 3.5rem;
+        }
+
+        &::after {
+            content: "";
+            width: 60%;
+            height: 1px;
+            background-color: $color-grey-light-text-2;
+            @include center-absolute;
+            top: 100%;
+        }
+    }
+}
+
+.quote {
+    background:
+        linear-gradient(to right,
+        rgba($color-primary-dark, .8),
+        rgba($color-primary-light, .8)),
+        url("../img/asphalt.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-y: 20%;
+    background-attachment: fixed;
+    text-align: center;
+    color: $color-grey-light-text;
+    font-size: 2.5rem;
+    font-style: italic;
+    line-height: 5rem;
+    padding: 6rem 0;
+
+    @include respond(phone) {
+        line-height: 4rem;
+    }
+
+    &__text {
+        margin-bottom: 2rem;
+
+        &::before {
+            content: "\201c";
+            color: $color-grey-light-text;
+            font-size: 10rem;
+            font-family: sans-serif;
+            position: relative;
+            top: 1rem;
+        }
+    }
+
+    &__author {
+        text-align: right;
+        font-weight: 300;
+    }
+
+}
+
+.gallery {
+    background-color: $color-grey-light-background;
+    padding: 8rem 0;
+
+    @include respond(tablet-portrait) {
+        padding: 5rem 0;
+    }
+
+    @include respond(phone) {
+        padding: 4rem 0;
+    }
+
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        //grid-template-rows: repeat(auto-fit, minmax(250px, 250px));
+        //grid-auto-rows: 250px;
+        grid-gap: 2rem;
+    }
+
+    &__item {
+        background-color: $color-black;
+        border-radius: 5px;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        opacity: 0;
+        transform: translateY(10rem);
+        transition: all 1s;
+    }
+
+    &__item-animate {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    
+    &__photo {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        vertical-align: top;
+        opacity: .8;
+        transform: scale(1.05);
+        transition: all .3s;
+
+        &:hover {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+}

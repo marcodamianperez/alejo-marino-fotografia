@@ -1,0 +1,14 @@
+.header {
+    background: 
+        linear-gradient(to bottom right,
+        rgba($color-primary-dark, .8),
+        rgba($color-primary-light, .8)),
+        url("../img/hero.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    height: 100vh;
+    position: relative;
+
+}

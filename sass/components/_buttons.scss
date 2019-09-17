@@ -1,0 +1,58 @@
+.scroll-down-btn {
+    @include center-absolute;
+    top: 88%;
+    width: 4rem;
+    height: 6.5rem;
+    background-color: transparent;
+    border-left: transparent;
+    border: 3px solid $color-grey-light-text;
+    border-radius: 25px;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+        content: "";
+        @include center-absolute;
+        top: 25%;
+        background-color: $color-grey-light-text;
+        width: 3px;
+        height: 9px;
+        border-radius: 25px;
+    }
+
+    &::after {
+        height: 3px;
+        animation-name: scroll-down-move;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-fill-mode: backwards;
+        animation-play-state: linear;
+    }
+
+}
+
+.scroll-up-btn {
+    position: absolute;
+    top: 0;
+    right: 2rem;
+    width: 4rem;
+    height: 4rem;
+    border: 2px solid $color-grey-light-text;
+    border-radius: 3px;
+    background-color: transparent;
+    cursor: pointer;
+
+    .up-arrow {
+        position: absolute;
+        left: 22%;
+        top: 35%;
+        color: $color-grey-light-text;
+        width: 2rem;
+        height: 2rem;
+        border: 2px solid $color-grey-light-text;
+        border-color: $color-grey-light-text transparent transparent $color-grey-light-text;
+        border-radius: 3px;
+        background-color: transparent;
+        transform: rotate(45deg);
+    }
+}
